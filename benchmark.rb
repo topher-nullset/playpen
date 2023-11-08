@@ -1,5 +1,4 @@
 require 'benchmark'
-require 'matrix'
 require 'pry'
 
 def generate_random_array(length)
@@ -86,7 +85,7 @@ def benchmark_find_methods(length)
     x.report("find_matches_ampersand:") { find_matches_ampersand(a, b, c) }
     x.report("find_matches_intersect:") { find_matches_intersect(a, b, c) }
     # x.report("find_matches_include:") { find_matches_include(a, b, c) }
-    # 100x slower than others
+    # 100x slower than others, redeuce length limit to 15
     x.report("find_matches_kiss:") { find_matches_kiss(a, b, c) }
     x.report("find_matches_sets:") { find_matches_sets(a, b, c) }
     x.report("find_matches_hash:") { find_matches_hash(a, b, c) }
